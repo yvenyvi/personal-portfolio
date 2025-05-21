@@ -132,10 +132,6 @@ This portfolio template implements Neo-Brutalist web design principles:
 - Edge (latest)
 - Opera (latest)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - [Bootstrap](https://getbootstrap.com/) - Front-end framework
