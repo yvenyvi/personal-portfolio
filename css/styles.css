@@ -475,7 +475,122 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none;
 }
 
-/* Resume Button Styles */
+/* ── Tech Group Cards (replaces old Skills cards) ── */
+.tech-group-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border: var(--border);
+    transform: var(--box-tilt);
+    box-shadow: var(--shadow);
+    height: 100%;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-group-card:hover {
+    transform: translateY(-8px) rotate(0deg);
+    box-shadow: 12px 12px 0 rgba(33, 45, 64, 0.7);
+}
+
+.tech-group-icon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    border: var(--border);
+    box-shadow: 4px 4px 0 rgba(33, 45, 64, 0.7);
+    transform: rotate(-3deg);
+    transition: all 0.3s;
+}
+
+.tech-group-card:hover .tech-group-icon {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.tech-group-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.tech-group-card h3:after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 4px;
+    background-color: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+}
+
+/* Tech pill tags */
+.tech-pill-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.tech-pill {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border: 2px solid var(--text-color);
+    letter-spacing: 0.03em;
+    transition: all 0.25s;
+    cursor: default;
+}
+
+.tech-pill:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 rgba(33, 45, 64, 0.5);
+}
+
+/* Hero "Built with" badges */
+.hero-built-with {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hero-built-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.65;
+    margin-right: 4px;
+}
+
+.hero-tech-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border: var(--border);
+    box-shadow: 3px 3px 0 rgba(33, 45, 64, 0.5);
+    letter-spacing: 0.03em;
+}
+
+
 .resume-btn {
     position: relative;
     z-index: 1;
@@ -514,6 +629,49 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+/* Project card image wrapper with hover overlay */
+.project-card-img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 111, 151, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.project-card-img-wrap:hover .project-card-overlay {
+    opacity: 1;
+}
+
+.project-card-overlay .btn {
+    border: 2px solid #fff;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+}
+
+/* Category badge chip */
+.project-category-badge {
+    display: inline-block;
+    background-color: var(--accent2);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 4px 10px;
+    border: 2px solid var(--text-color);
+    box-shadow: 2px 2px 0 rgba(33, 45, 64, 0.5);
+}
+
 .project-card {
     background-color: var(--card-bg);
     border: var(--border);
@@ -532,10 +690,10 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     border-bottom: var(--border);
     transition: all 0.5s;
-    filter: grayscale(80%);
+    filter: grayscale(60%);
 }
 
-.project-card:hover .card-img-top {
+.project-card-img-wrap:hover .card-img-top {
     transform: scale(1.05);
     filter: grayscale(0%);
 }
@@ -562,6 +720,113 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     border-top: var(--border);
     padding: 15px 25px;
+}
+
+/* Project Detail Modal */
+.project-modal .modal-header {
+    background-color: var(--primary-color);
+    border-bottom: var(--border);
+    color: #fff;
+    padding: 20px 28px;
+}
+
+.project-modal-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+}
+
+.project-modal .modal-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+
+.project-modal-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 16px;
+    margin-bottom: 24px;
+    color: var(--text-color);
+}
+
+.project-modal-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--secondary-color);
+    display: inline-block;
+}
+
+.project-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px;
+}
+
+.project-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+[data-bs-theme="dark"] .project-feature-list li {
+    border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.project-feature-list li:last-child {
+    border-bottom: none;
+}
+
+.project-feature-list li i {
+    color: var(--secondary-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+/* Modal screenshot carousel */
+.project-modal-carousel {
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.project-modal-carousel .carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.project-modal-carousel .carousel-caption {
+    background-color: rgba(42, 111, 151, 0.85);
+    border: none;
+    border-radius: 0;
+    padding: 8px 14px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    max-width: 100%;
+}
+
+.project-modal-carousel .carousel-caption p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .btn-outline-primary {    border: var(--border);    color: var(--primary-color);    background-color: transparent;    font-weight: 600;    padding: 8px 15px;    transition: all 0.3s;    text-transform: uppercase;    letter-spacing: 0.05em;    border-radius: 0;    box-shadow: 4px 4px 0 rgba(33, 45, 64, 0.7);}.btn-outline-primary:hover {    background-color: var(--primary-color);    color: white;    transform: translate(2px, 2px);    box-shadow: 2px 2px 0 rgba(33, 45, 64, 0.7);}

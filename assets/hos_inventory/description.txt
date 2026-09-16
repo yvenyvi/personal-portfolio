@@ -1,0 +1,50 @@
+HSO Inventory System
+Welcome to the HSO Inventory System!
+
+This is a comprehensive desktop application developed for managing medical inventory, tracking equipment, and recording patient and borrower interactions.
+
+About the Developer
+This project was developed by a 1st-year BSIT (Bachelor of Science in Information Technology) student from National University (NU) Baliwag as a major requirement to pass the Object-Oriented Programming (OOP) subject.
+
+?? Features
+User Authentication: Secure login and sign-up functionality for staff.
+Dynamic Dashboard: A modern, data-driven home dashboard displaying real-time analytics (total medicines, equipment, patients, and borrowers).
+Medicine Inventory: Add, update, delete, and dispense medicines. Tracks stock levels and expiry dates.
+Equipment Inventory: Add, update, delete, and lend out medical equipment.
+Record Management: Keep track of patients who received medication and borrowers who used equipment.
+Report Generation: Built-in table printing functionality to generate physical records of inventory and transactions.
+??? Tech Stack
+Language: Java (JDK 8+)
+GUI Framework: Java Swing (AWT/Swing)
+Database: MySQL
+Architecture: Object-Oriented Programming (OOP)
+Build Tool: Apache Ant / NetBeans / VS Code
+?? Getting Started
+Prerequisites
+Java Development Kit (JDK) 8 or newer installed and configured.
+MySQL Server installed and running locally on port 3306.
+NetBeans IDE or VS Code (with the Microsoft Extension Pack for Java).
+Installation & Setup
+Clone the Repository \\�ash git clone cd hos-system \\
+
+Database Configuration
+
+Open your MySQL command line or a tool like phpMyAdmin/MySQL Workbench.
+Run the provided SQL script located at database/hso_database.sql to generate the database schema automatically: \\sql SOURCE database/hso_database.sql; \\
+Note: The application connects to MySQL using the credentials defined in src/database.properties. By default, it expects:
+URL: jdbc:mysql://localhost:3306/hso_database
+Username: oot
+Password: password (Change the password in src/database.properties if your local MySQL root user has a different password!)
+Running the Application
+
+In VS Code: Open the folder, let the Java Extension compile the project, and run the SignUpLogIn.java file as a Java application.
+In NetBeans: Open the project folder, click "Clean and Build", and then "Run Project".
+?? Project Structure
+src/pages/ - Contains all the UI pages (Login, Dashboard, Inventory, etc.).
+src/util/ - Contains helper classes like the Database.java connection manager.
+src/images/ - Assets, icons, and logos used in the UI.
+lib/ - Third-party dependencies (MySQL Connector, JCalendar, etc.).
+database/ - Contains the hso_database.sql file for database setup.
+Thank you for checking out my OOP final project!
+
+git repository: https://github.com/yvenyvi/hos-system.git
