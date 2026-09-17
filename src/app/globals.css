@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2a6f97;
+  --secondary-color: #013a63;
+  --accent1: #ffb703;
+  --accent2: #fb8500;
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #212529;
+  --border: 3px solid #212529;
+  --shadow: 8px 8px 0px rgba(33, 45, 64, 0.9);
+  --box-tilt: rotate(-1deg);
+}
+
+[data-theme='dark'] {
+  --primary-color: #3f88c5; /* A more vibrant, readable blue for buttons */
+  --secondary-color: #0b132b; /* A very dark blue/navy for the footer */
+  --bg-color: #1a1a2e;
+  --card-bg: #16213e;
+  --text-color: #e2e2e2;
+  --border: 3px solid #e2e2e2;
+  --shadow: 8px 8px 0px rgba(63, 136, 197, 0.4);
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+@layer utilities {
+  .neo-box {
+    @apply bg-card border-[3px] border-text shadow-neo transition-all duration-300 relative;
+  }
+  
+  .neo-box:hover {
+    @apply shadow-neo-hover -translate-y-2;
+  }
+  
+  .neo-btn {
+    @apply bg-primary text-white border-[3px] border-text shadow-neo font-bold px-6 py-3 uppercase tracking-wider transition-all duration-300;
+  }
+  
+  .neo-btn:hover {
+    @apply bg-secondary translate-x-[4px] translate-y-[4px] shadow-none;
+  }
+}
+
+/* Decorative Neo-Brutalist Shapes */
+.shape-1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: var(--accent1);
+  border: var(--border);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.shape-2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent2);
+  border: var(--border);
+  transform: rotate(45deg);
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.shape-3 {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border: var(--border);
+  z-index: -1;
+  opacity: 0.8;
+}
+
